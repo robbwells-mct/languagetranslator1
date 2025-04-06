@@ -1,2 +1,4 @@
+# Flask==2.0.1: A lightweight WSGI web application framework in Python, used to build web applications.
+# googletrans==4.0.0-rc1: A Python library that provides an interface to the Google Translate API for language translation.
 Flask==2.0.1
 googletrans==4.0.0-rc1
