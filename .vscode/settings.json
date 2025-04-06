@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/055a20f6-7b83-4acc-a6e8-173e7c2be787/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/languagetranslator",
+    "appService.deploySubpath": "english-to-german-app"
+}
