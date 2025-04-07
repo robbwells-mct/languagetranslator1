@@ -1,7 +1,15 @@
 from googletrans import Translator
 
 def translate_to_german(english_phrase):
-    # Use googletrans to translate the phrase
+    """
+    Translates an English phrase to German using the googletrans library.
+
+    Args:
+        english_phrase (str): The English phrase to translate.
+
+    Returns:
+        str: The translated German phrase, or an error message if translation fails.
+    """
     translator = Translator()
     try:
         translation = translator.translate(english_phrase, src='en', dest='de')
@@ -11,34 +19,25 @@ def translate_to_german(english_phrase):
 
 def main():
     """
-    Main function for the English to German Translator application.
+    Entry point for the English to German Translator application.
 
-    This function serves as the entry point for the application. It welcomes the user,
-    prompts them to input English phrases for translation, and displays the corresponding
-    German translations. The user can exit the application by typing 'exit'.
-
-    Workflow:
-    1. Displays a welcome message.
-    2. Continuously prompts the user for an English phrase.
-    3. Translates the input phrase to German using the `translate_to_german` function.
-    4. Displays the German translation.
-    5. Exits the loop and terminates the program when the user types 'exit'.
-
-    Note:
-    - The `translate_to_german` function must be implemented for this function to work correctly.
-
-    Raises:
-    - No exceptions are explicitly raised in this function, but errors may occur if
-        `translate_to_german` is not defined or behaves unexpectedly.
+    This function welcomes the user, prompts for English phrases, translates them to German,
+    and displays the results. The user can exit the application by typing 'exit'.
     """
     print("Welcome to the English to German Translator!")
+    print("Type 'exit' to quit the application.\n")
+
     while True:
-        english_phrase = input("Enter an English phrase to translate (or type 'exit' to quit): ")
+        english_phrase = input("Enter an English phrase to translate: ").strip()
         if english_phrase.lower() == 'exit':
             print("Exiting the translator. Goodbye!")
             break
+        if not english_phrase:
+            print("Please enter a valid phrase.")
+            continue
         german_translation = translate_to_german(english_phrase)
-        print(f"German translation: {german_translation}")
+        print(f"German translation: {german_translation}\n")
 
 if __name__ == "__main__":
     main()
+    
